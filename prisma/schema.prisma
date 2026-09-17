@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // SQLite for local development. To move to production, swap this to
+  // provider = "postgresql" and point url at a hosted Postgres instance
+  // (Supabase, Neon, Railway, etc.) — the rest of the app doesn't change.
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  location    String
+  price       Int
+  status      String   // "For Sale" | "For Rent"
+  type        String   // "House" | "Apartment" | "Villa" | "Cabin"
+  beds        Int
+  baths       Int
+  sqft        Int
+  image       String
+  gallery     String   // JSON-encoded string array
+  description String
+  features    String   // JSON-encoded string array
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  inquiries Inquiry[]
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  message    String?
+  tourDate   DateTime?
+  property   Property? @relation(fields: [propertyId], references: [id])
+  propertyId String?
+  createdAt  DateTime @default(now())
+}
