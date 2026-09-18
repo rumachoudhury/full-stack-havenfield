@@ -104,9 +104,16 @@ export default function ContactPage() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full border border-sand rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-clay resize-none"
               />
-              <button
+              {/* <button
                 type="submit"
                 className="w-full bg-ink text-cream rounded-lg py-3.5 text-sm hover:bg-clay transition-colors"
+              >
+                Send Message
+              </button> */}
+
+              <button
+                type="submit"
+                className="w-full bg-clay text-cream rounded-lg py-3.5 text-sm hover:bg-clay/90 transition-colors"
               >
                 Send Message
               </button>

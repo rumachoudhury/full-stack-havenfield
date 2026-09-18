@@ -70,7 +70,7 @@ export default async function HomePage() {
         </h2>
         <Link
           href="/properties"
-          className="inline-flex items-center gap-2 border border-ink text-ink px-8 py-3.5 rounded-full hover:bg-ink hover:text-cream transition-colors text-sm"
+          className="inline-flex items-center gap-2 border border-ink text-ink px-8 py-3.5 rounded-full hover:bg-clay hover:text-cream transition-colors text-sm"
         >
           Browse all properties <ArrowRight className="w-4 h-4" />
         </Link>
