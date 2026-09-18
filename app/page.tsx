@@ -1,10 +1,10 @@
-import Hero from '@/components/Hero';
-import PropertyCard from '@/components/PropertyCard';
-import { getFeaturedProperties } from '@/lib/queries';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import Hero from "@/components/Hero";
+import PropertyCard from "@/components/PropertyCard";
+import { getFeaturedProperties } from "@/lib/queries";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const featured = await getFeaturedProperties(3);
@@ -16,12 +16,24 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-24">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">Featured</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-ink">Recently listed</h2>
+            <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">
+              Featured
+            </p>
+            {/* <h2 className="font-serif text-4xl md:text-5xl text-ink">Recently listed</h2> */}
+            <h2 className="font-serif text-4xl md:text-5xl text-ink">
+              Recently listed homes
+            </h2>
           </div>
-          <Link
+          {/* <Link
             href="/properties"
             className="hidden md:flex items-center gap-2 text-sm text-ink/70 hover:text-clay transition-colors"
+          >
+            View all properties <ArrowRight className="w-4 h-4" />
+          </Link> */}
+
+          <Link
+            href="/properties"
+            className="hidden md:flex items-center gap-2 text-sm text-clay hover:text-clay/90 transition-colors"
           >
             View all properties <ArrowRight className="w-4 h-4" />
           </Link>
@@ -44,18 +56,22 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">Our approach</p>
+            <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">
+              Our approach
+            </p>
             <h2 className="font-serif text-4xl md:text-5xl text-ink leading-tight mb-6">
               We don&rsquo;t list houses. We introduce you to homes.
             </h2>
             <p className="text-ink/70 leading-relaxed mb-6">
-              Every property on Havenfield is visited and vetted in person by our team before it reaches you.
-              We look past square footage &mdash; at light, at quiet, at the feeling of arriving somewhere that fits.
+              Every property on Havenfield is visited and vetted in person by
+              our team before it reaches you. We look past square footage
+              &mdash; at light, at quiet, at the feeling of arriving somewhere
+              that fits.
             </p>
             <Link
               href="/contact"
               // className="inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full hover:bg-clay transition-colors text-sm"
-                className="inline-flex items-center gap-2 bg-clay text-cream px-6 py-3 rounded-full hover:bg-clay/90 transition-colors text-sm"
+              className="inline-flex items-center gap-2 bg-clay text-cream px-6 py-3 rounded-full hover:bg-clay/90 transition-colors text-sm"
             >
               Work with us <ArrowRight className="w-4 h-4" />
             </Link>
@@ -64,7 +80,9 @@ export default async function HomePage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-24 text-center">
-        <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">Ready when you are</p>
+        <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">
+          Ready when you are
+        </p>
         <h2 className="font-serif text-4xl md:text-6xl text-ink max-w-2xl mx-auto leading-tight mb-8">
           Let&rsquo;s find your next address.
         </h2>
