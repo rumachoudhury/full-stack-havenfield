@@ -26,14 +26,17 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-cream/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
-      }`}
+      // className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+      //   scrolled ? 'bg-cream/90 backdrop-blur-md shadow-sm' : 'bg-transparent' 
+      // }`}
+className="fixed top-0 left-0 right-0 z-50 bg-black text-white"
+
+
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-2 group">
           <Home className="w-5 h-5 text-clay" strokeWidth={1.5} />
-          <span className="font-serif text-2xl tracking-wide text-ink">Havenfield</span>
+          <span className="font-serif text-2xl tracking-wide text-white">Havenfield</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
@@ -41,14 +44,17 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-ink/80 hover:text-clay transition-colors"
+              // className="text-sm tracking-wide text-ink/80 hover:text-clay transition-colors"
+                className="text-white hover:text-gray-300 transition-colors"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="text-sm tracking-wide bg-ink text-cream px-5 py-2.5 rounded-full hover:bg-clay transition-colors"
+            // className="text-sm tracking-wide bg-ink text-cream px-5 py-2.5 rounded-full hover:bg-clay transition-colors"
+                        className="text-sm tracking-wide bg-clay text-cream px-5 py-2.5 rounded-full hover:bg-clay/90 transition-colors"
+
           >
             Book a Tour
           </Link>

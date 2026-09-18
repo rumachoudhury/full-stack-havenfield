@@ -73,9 +73,17 @@ export default function Hero() {
             placeholder="Search by city, neighborhood, or property name"
             className="flex-1 bg-transparent px-3 py-3 text-ink placeholder:text-ink/40 focus:outline-none text-sm md:text-base"
           />
-          <button
+          {/* <button
             type="submit"
             className="bg-ink text-cream rounded-full px-5 md:px-7 py-3 flex items-center gap-2 hover:bg-clay transition-colors shrink-0"
+          >
+            <Search className="w-4 h-4" />
+            <span className="hidden sm:inline text-sm">Search</span>
+          </button> */}
+
+          <button
+            type="submit"
+            className="bg-clay text-cream rounded-full px-5 md:px-7 py-3 flex items-center gap-2 hover:bg-bronze transition-colors shrink-0"
           >
             <Search className="w-4 h-4" />
             <span className="hidden sm:inline text-sm">Search</span>
