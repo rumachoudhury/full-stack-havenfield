@@ -83,7 +83,7 @@ export default function Hero() {
 
           <button
             type="submit"
-            className="bg-clay text-cream rounded-full px-5 md:px-7 py-3 flex items-center gap-2 hover:bg-bronze transition-colors shrink-0"
+            className="bg-clay text-cream rounded-full px-5 md:px-7 py-3 flex items-center gap-2 hover:bg-clay/90 transition-colors shrink-0"
           >
             <Search className="w-4 h-4" />
             <span className="hidden sm:inline text-sm">Search</span>

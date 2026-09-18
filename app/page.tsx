@@ -54,7 +54,8 @@ export default async function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full hover:bg-clay transition-colors text-sm"
+              // className="inline-flex items-center gap-2 bg-ink text-cream px-6 py-3 rounded-full hover:bg-clay transition-colors text-sm"
+                className="inline-flex items-center gap-2 bg-clay text-cream px-6 py-3 rounded-full hover:bg-clay/90 transition-colors text-sm"
             >
               Work with us <ArrowRight className="w-4 h-4" />
             </Link>
