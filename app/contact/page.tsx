@@ -1,35 +1,43 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [error, setError] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
-      const res = await fetch('/api/inquiries', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Request failed');
+      if (!res.ok) throw new Error("Request failed");
       setSubmitted(true);
     } catch {
-      setError('Something went wrong — please try again.');
+      setError("Something went wrong — please try again.");
     }
   };
 
   return (
     <div className="pt-36 pb-24 max-w-7xl mx-auto px-6 md:px-10">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">Get in touch</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-ink mb-14">Let&rsquo;s talk homes.</h1>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="text-clay tracking-[0.2em] text-xs uppercase mb-3">
+          Get in touch
+        </p>
+        <h1 className="font-serif text-5xl md:text-6xl text-ink mb-14">
+          Let&rsquo;s talk homes.
+        </h1>
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-16">
@@ -40,8 +48,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-ink/70 leading-relaxed mb-10 max-w-md">
-            Whether you&rsquo;re buying, selling, or just curious what&rsquo;s out there, our team responds within one
-            business day. No pressure, just good advice.
+            Whether you’re buying, selling, or exploring your options, our
+            dedicated team is here to provide thoughtful guidance every step of
+            the way. Expect a response within one business day—professional
+            service, personalized advice, and no pressure.
           </p>
 
           <div className="space-y-5">
@@ -61,7 +71,9 @@ export default function ContactPage() {
               <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center shrink-0">
                 <MapPin className="w-4 h-4 text-clay" strokeWidth={1.5} />
               </div>
-              <span className="text-ink/80">142 Hollow Ridge Rd, Hudson, NY</span>
+              <span className="text-ink/80">
+                142 Hollow Ridge Rd, Hudson, NY
+              </span>
             </div>
           </div>
         </motion.div>
@@ -76,7 +88,9 @@ export default function ContactPage() {
           {submitted ? (
             <div className="text-center py-10">
               <p className="font-serif text-2xl text-ink mb-2">Message sent</p>
-              <p className="text-ink/60 text-sm">Thanks for reaching out &mdash; we&rsquo;ll be in touch soon.</p>
+              <p className="text-ink/60 text-sm">
+                Thanks for reaching out &mdash; we&rsquo;ll be in touch soon.
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
