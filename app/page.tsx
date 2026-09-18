@@ -63,10 +63,15 @@ export default async function HomePage() {
               We don&rsquo;t list houses. We introduce you to homes.
             </h2>
             <p className="text-ink/70 leading-relaxed mb-6">
-              Every property on Havenfield is visited and vetted in person by
+              {/* Every property on Havenfield is visited and vetted in person by
               our team before it reaches you. We look past square footage
               &mdash; at light, at quiet, at the feeling of arriving somewhere
-              that fits.
+              that fits. */}
+              Every property featured on Havenfield is personally visited and
+              carefully vetted by our team before it reaches you. We look beyond
+              square footage and specifications to consider the details that
+              truly matter—natural light, tranquility, character, and the
+              feeling of arriving somewhere that feels just right.
             </p>
             <Link
               href="/contact"
