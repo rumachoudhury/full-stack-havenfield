@@ -83,7 +83,7 @@ export default function BookingCard({
           />
           <button
             type="submit"
-            className="w-full bg-ink text-cream rounded-lg py-3 text-sm hover:bg-clay transition-colors"
+            className="w-full bg-clay text-cream rounded-lg py-3 text-sm hover:bg-clay/90 transition-colors"
           >
             Request a Tour
           </button>
