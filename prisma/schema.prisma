@@ -1,12 +1,8 @@
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
-  // SQLite for local development. To move to production, swap this to
-  // provider = "postgresql" and point url at a hosted Postgres instance
-  // (Supabase, Neon, Railway, etc.) — the rest of the app doesn't change.
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
